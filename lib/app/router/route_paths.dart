@@ -1,5 +1,8 @@
-abstract final class RoutePaths {
-  static const String starter = '/';
+abstract class RoutePaths {
+  const RoutePaths._();
 
-  // Trainees add challenge routes here as features are implemented.
+  static const String login = '/login';
+  static const String home = '/home';
+  static const String membership = '/membership';
+  static const String history = '/history';
 }
