@@ -14,7 +14,7 @@ class GymSampleApp extends ConsumerWidget {
       title: 'VTQP Gym Sample',
       routerConfig: router,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 70, 16, 163)),
         useMaterial3: true,
       ),
     );
