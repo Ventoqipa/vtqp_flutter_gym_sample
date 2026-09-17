@@ -2,13 +2,20 @@
 
 Architecture-first starter repository for the **VTQP Technical Lab - Challenge 01**.
 
-This repository intentionally provides **foundations, boundaries, conventions, and contracts - not the challenge solution**. Trainees are expected to implement the required behavior while respecting the architecture.
-
-## Learning objective
-
-Build a small gym application while demonstrating that you understand why responsibilities are separated and how dependencies flow through the system.
+This repository intentionally provides **foundations, boundaries, conventions, references, and contracts - not the challenge solution**. Trainees are expected to implement the required behavior while respecting the architecture.
 
 > We do not evaluate how many lines of code you write. We evaluate whether you can explain why the code is organized this way.
+
+## Start here
+
+Before implementing anything, read these documents in order:
+
+1. [`docs/architecture/ARCHITECTURE.md`](docs/architecture/ARCHITECTURE.md) - boundaries and dependency rules.
+2. [`docs/architecture/decisions`](docs/architecture/decisions) - architectural decisions and rationale.
+3. [`docs/REFERENCES.md`](docs/REFERENCES.md) - official references mapped to the decisions you will make.
+4. [`CONTRIBUTING.md`](CONTRIBUTING.md) - branch, commit, PR, quality, and review expectations.
+
+Do not guess when an official reference exists. Research first, understand the recommendation, then make and explain your decision.
 
 ## Technology baseline
 
@@ -34,40 +41,17 @@ No backend or external service is required.
 ```text
 lib/
 |-- app/
-|   |-- app.dart
-|   `-- router/
-|       |-- app_router.dart
-|       `-- route_paths.dart
 |-- core/
-|   |-- errors/
-|   |-- result/
-|   `-- usecases/
 |-- features/
 |   |-- auth/
-|   |   |-- data/
-|   |   |-- domain/
-|   |   `-- presentation/
 |   |-- home/
-|   |   `-- presentation/
 |   `-- membership/
 |       |-- data/
-|       |   |-- datasources/
-|       |   |-- models/
-|       |   `-- repositories/
 |       |-- domain/
-|       |   |-- entities/
-|       |   |-- repositories/
-|       |   `-- usecases/
 |       `-- presentation/
-|           |-- providers/
-|           |-- pages/
-|           `-- widgets/
 |-- shared/
-|   `-- widgets/
 `-- main.dart
 ```
-
-The starter keeps empty architectural directories in Git using `.gitkeep` files. They are boundaries, not an instruction to create unnecessary classes.
 
 ### Dependency rule
 
@@ -86,10 +70,6 @@ Page -> Provider/Controller -> Use Case -> Repository Contract -> Repository Imp
 ```
 
 The UI must not know whether membership information comes from a mock source, REST API, database, or another implementation.
-
-## Architecture decisions
-
-Read [`docs/architecture/ARCHITECTURE.md`](docs/architecture/ARCHITECTURE.md) before implementing the challenge. Architectural decisions are documented in [`docs/architecture/decisions`](docs/architecture/decisions).
 
 ## Strict rules
 
@@ -112,7 +92,7 @@ Read [`docs/architecture/ARCHITECTURE.md`](docs/architecture/ARCHITECTURE.md) be
 - Observer / State Management with Riverpod
 - SOLID principles in practical decisions
 
-The starter does **not** implement these patterns for the challenge. It only establishes the environment and architectural boundaries.
+The starter does **not** implement these patterns for the challenge. It establishes the environment and architectural boundaries and points you to the references needed to implement them intentionally.
 
 ## Getting started
 
@@ -134,6 +114,19 @@ flutter pub get
 
 Do not overwrite the architecture or documentation when running Flutter tooling.
 
+## Before asking for help
+
+Use the repository references and follow this sequence:
+
+1. Define the problem precisely.
+2. Reproduce it.
+3. Read the relevant architecture rule.
+4. Check the official Flutter/Dart/Riverpod/GoRouter documentation in `docs/REFERENCES.md`.
+5. Form a hypothesis.
+6. Run the smallest experiment that can validate it.
+7. Document what you tried and what happened.
+8. Ask for help with evidence, not only with a symptom.
+
 ## Delivery workflow
 
 1. Select/assign the Trello card.
@@ -146,32 +139,9 @@ Do not overwrite the architecture or documentation when running Flutter tooling.
 8. The other trainee reviews the PR and asks architecture questions.
 9. Address review comments and leave the work in `Review` for final evaluation.
 
-Suggested branch names:
-
-```text
-feature/auth-flow
-feature/membership
-feature/access-history
-refactor/membership-boundaries
-test/membership-use-case
-```
-
 ## Definition of Done
 
-A challenge implementation is ready for review only when:
-
-- The application runs locally.
-- The four required areas are reachable.
-- Data is mock-only; no backend is required.
-- UI does not directly perform data access.
-- A repository abstraction and concrete mock implementation exist.
-- At least one meaningful use case exists.
-- Riverpod manages the principal state of at least one feature.
-- Main dependencies are injected rather than constructed in UI code.
-- Responsibilities are clearly separated.
-- `flutter analyze` passes.
-- Relevant tests pass.
-- Both trainees can explain the complete dependency flow.
+A challenge implementation is ready for review only when the application runs, all required areas are reachable, boundaries are respected, dependencies are injected, `flutter analyze` passes, relevant tests pass, and both trainees can explain the complete dependency flow.
 
 ## Out of scope
 
