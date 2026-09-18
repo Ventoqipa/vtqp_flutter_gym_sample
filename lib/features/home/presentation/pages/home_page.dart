@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 
 import 'package:vtqp_flutter_gym_sample/features/auth/presentation/providers/login_provider.dart';
 import 'package:vtqp_flutter_gym_sample/features/auth/presentation/providers/login_state.dart';
-// import 'package:vtqp_flutter_gym_sample/features/membership/presentation/providers/membership_provider.dart';
-// import 'package:vtqp_flutter_gym_sample/features/membership/domain/entities/membership.dart';
+import 'package:vtqp_flutter_gym_sample/features/membership/domain/entities/membership.dart';
+import 'package:vtqp_flutter_gym_sample/features/membership/presentation/providers/membership_providers.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
@@ -18,7 +18,7 @@ class HomePage extends ConsumerWidget {
       _ => 'there',
     };
 
-    final membershipAsync = ref.watch(membershipProvider);
+    final membershipAsync = ref.watch(membershipFutureProvider);
 
     return Scaffold(
       appBar: AppBar(title: const Text('Home')),
