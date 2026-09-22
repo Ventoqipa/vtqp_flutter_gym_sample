@@ -150,3 +150,49 @@ Backend, real APIs, payments, membership purchase/renewal, FaceID, turnstiles, p
 ## Documentation language
 
 **All source code, identifiers, comments, commits, branches, Pull Requests, and project documentation must be written in English.**
+
+
+# VTQP Technical Lab - Flutter Gym Sample
+
+## 📌 Project Overview
+
+This application is a lightweight mobile solution designed for gym members to view their active membership details and track their recent facility access history. 
+
+Built as part of the **VTQP Bootcamp Challenge 01**, the project demonstrates best practices in Flutter software architecture:
+* **Clean Architecture:** Strict separation between Data, Domain, and Presentation layers[cite: 1].
+* **State Management & DI:** Powered by **Riverpod** to supply dependencies and manage observable UI state[cite: 1].
+* **Navigation:** Managed via **GoRouter** for seamless screen transitions[cite: 1].
+* **Decoupled Mock Data:** Domain entities and contracts ensure the UI remains fully independent from data sources[cite: 1].
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up and run the application on your local machine[cite: 1]:
+
+### Prerequisites
+* [Flutter SDK](https://docs.flutter.dev/get-started/install) (latest stable version)[cite: 1]
+* Dart SDK[cite: 1]
+
+### 1. Clone & Setup
+Clone the repository and install the required dependencies[cite: 1]:
+```bash
+git clone [https://github.com/Ventoqipa/vtqp_flutter_gym_sample.git](https://github.com/Ventoqipa/vtqp_flutter_gym_sample.git)
+cd vtqp_flutter_gym_sample
+flutter pub get
+```
+
+### 2. Verify Code Quality & Tests
+
+Ensure static analysis passes and execute unit tests:
+```bash
+flutter analyze
+flutter test
+```
+
+### 3. Run the App
+
+Launch the app on an active emulator or connected device:
+```bash
+flutter run
+```

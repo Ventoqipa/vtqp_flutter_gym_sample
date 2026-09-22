@@ -40,4 +40,5 @@ class MembershipPage extends ConsumerWidget {
         error: (err, stack) => Center(child: Text('Error: $err')),
       ),
     );
-
+  }
+}
